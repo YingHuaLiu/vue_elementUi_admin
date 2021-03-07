@@ -9,12 +9,12 @@
       <el-form ref="loginFormRef" :model="loginForm" :rules="loginFormRules" label-width="0px" class="login_form">
         <!--用户名-->
         <el-form-item prop="username">
-          <el-input v-model="loginForm.username" prefix-icon="iconfont icon-ren"></el-input>
+          <el-input v-model="loginForm.username" prefix-icon="iconfont icon-user"></el-input>
         </el-form-item>
         <!--密码-->
         <el-form-item prop="password">
           <el-input type="password" v-model="loginForm.password"
-                    prefix-icon="iconfont icon-icon_huabanfuben"></el-input>
+                    prefix-icon="iconfont icon-3702mima"></el-input>
         </el-form-item>
         <!--按钮-->
         <el-form-item class="btns">
@@ -53,7 +53,7 @@ export default {
     login() {
       this.$refs.loginFormRef.validate(async valid => {
         if(valid) {
-          const { data: res } = await this.$http.post('login', this.loginForm);
+          const { data: res } = await this.$http.post('/login', this.loginForm);
           if(res.meta.status !== 200) {
             return this.$message.error('登陆失败！');
           }
