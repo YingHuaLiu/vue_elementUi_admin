@@ -2,6 +2,8 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Login from '../components/Login.vue';
 import Home from '../components/Home';
+import Welcome from '@/components/Welcome';
+import Users from '@/components/User/Users';
 
 Vue.use(VueRouter);
 
@@ -16,7 +18,18 @@ const routes = [
   },
   {
     path: '/home',
-    component: Home
+    component: Home,
+    redirect: '/welcome',
+    children: [
+      {
+        path: '/welcome',
+        component: Welcome
+      },
+      {
+        path: '/users',
+        component: Users
+      }
+    ]
   }
 ];
 
@@ -30,11 +43,11 @@ router.beforeEach((to, from, next) => {
   // from表示从哪个路径跳转过来
   // next是一个函数，表示放行
   // next('/path')表示强制跳转到/path
-  if (to.path === '/login') {
+  if(to.path === '/login') {
     return next();
   }
   const tokenStr = window.sessionStorage.getItem('token');
-  if (!tokenStr) {
+  if(!tokenStr) {
     return next('/login');
   }
   next();
