@@ -30,6 +30,7 @@
     "eslint-plugin-vue": "^6.2.2",
     "less": "^4.1.1",
     "less-loader": "7.3.0",
+    "nprogress": "^0.2.0",
     "vue-cli-plugin-element": "^1.0.1",
     "vue-table-with-tree-grid": "^0.2.4",
     "vue-template-compiler": "^2.6.11"

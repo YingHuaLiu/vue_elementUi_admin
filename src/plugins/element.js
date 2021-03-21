@@ -3,9 +3,12 @@ import {
   Button, Form, FormItem, Input, Message, Container, Header, Aside, Main,
   Menu, Submenu, MenuItemGroup, MenuItem, Breadcrumb, BreadcrumbItem, Card,
   Row, Col, Table, TableColumn, Switch, Tooltip, Pagination, Dialog, MessageBox,
-  Tag, Tree, Select, Option, Cascader
+  Tag, Tree, Select, Option, Cascader, Alert, TabPane, Tabs
 } from 'element-ui';
 
+Vue.use(Tabs);
+Vue.use(TabPane);
+Vue.use(Alert);
 Vue.use(Cascader);
 Vue.use(Option);
 Vue.use(Select);
