@@ -40,7 +40,7 @@
             {{ scope.row.create_time | dateFormat }}
           </template>
         </el-table-column>
-        <el-table-column label="操作" v-slot="scope">
+        <el-table-column label="操作">
           <el-button size="mini" type="primary" icon="el-icon-edit" @click="showBox"></el-button>
           <el-button size="mini" type="success" icon="el-icon-location" @click="showProgressBox"></el-button>
         </el-table-column>
